@@ -23,14 +23,14 @@
       include_tasks: '/opt/plexguide/containers/_core.yml'
 
     # FOLDER CREATION #############################################################
-    - name: 'Including folders'
-      include_tasks: '/opt/plexguide/containers/_folders.yml'
+    #- name: 'Including folders'
+    #  include_tasks: '/opt/plexguide/containers/_folders.yml'
       
-    - name: Create nzb & tmp folder
-      file: "path={{item}} state=directory mode=0775 owner=1000 group=1000"
-      with_items:
-        - '{{path.stdout}}/nzb'
-        - '{{path.stdout}}/downloads/{{pgrole}}/tmp'
+    #- name: Create nzb & tmp folder
+    #  file: "path={{item}} state=directory mode=0775 owner=1000 group=1000"
+    #  with_items:
+    #    - '{{path.stdout}}/nzb'
+    #    - '{{path.stdout}}/downloads/{{pgrole}}/tmp'
 
     - name: 'Checking for existing app data'
       stat:

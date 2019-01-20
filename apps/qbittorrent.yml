@@ -15,7 +15,7 @@
       set_fact:
         pgrole: 'qbittorrent'
         intport: '8080'
-        extport: '8083'
+        extport: '8080'
         image: 'linuxserver/qbittorrent'
 
     # CORE (MANDATORY) #############################################################
@@ -23,8 +23,8 @@
       include_tasks: '/opt/plexguide/containers/_core.yml'
 
     # FOLDER CREATION #############################################################
-    - name: 'Including folders'
-      include_tasks: '/opt/plexguide/containers/_folders.yml'
+    # - name: 'Including folders'
+    #  include_tasks: '/opt/plexguide/containers/_folders.yml'
 
     # LABELS ######################################################################
     - name: 'Adding Traefik'
