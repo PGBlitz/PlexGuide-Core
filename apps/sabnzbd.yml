@@ -16,7 +16,7 @@
         pgrole: 'sabnzbd'
         intport: '8080'
         extport: '8080'
-        image: 'linuxserver/sabnzbd'
+        image: 'funkypenguin/sabnzbd'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'
