@@ -69,10 +69,11 @@
       file: 'path={{item}} state=directory mode=0775 owner=1000 group=1000'
       with_items:
         - '{{path.stdout}}/incomplete/{{pgrole}}'
-        - '{{path.stdout}}/incomplete/{{pgrole}}/tv'
-        - '{{path.stdout}}/incomplete/{{pgrole}}/movies'
-        - '{{path.stdout}}/incomplete/{{pgrole}}/ebooks'
-        - '{{path.stdout}}/incomplete/{{pgrole}}/abooks'
+# These foldes are not used by Sab and create orphaned files warnings. THey are used in the complete path instead.
+#        - '{{path.stdout}}/incomplete/{{pgrole}}/tv'
+#        - '{{path.stdout}}/incomplete/{{pgrole}}/movies'
+#        - '{{path.stdout}}/incomplete/{{pgrole}}/ebooks'
+#        - '{{path.stdout}}/incomplete/{{pgrole}}/abooks'
       when: incomplete.stdout | length == 0
       ignore_errors: yes
 
@@ -130,6 +131,16 @@
         option: complete_dir
         value: '{{path.stdout}}/downloads/{{pgrole}}'
         state: present
+        
+#Sab wil place files set in the Categories section into these folders before moving them to the Radarr/Sonarr/Lidarr etc set dirctory
+- name: Creating complete paths
+      file: 'path={{item}} state=directory mode=0775 owner=1000 group=1000'
+      with_items:
+        - '{{path.stdout}}/complete/{{pgrole}}/tv'
+        - '{{path.stdout}}/complete/{{pgrole}}/movies'
+        - '{{path.stdout}}/complete/{{pgrole}}/ebooks'
+        - '{{path.stdout}}/complete/{{pgrole}}/abooks'
+      ignore_errors: yes
 
     - name: Set nzb watch location
       ini_file:
