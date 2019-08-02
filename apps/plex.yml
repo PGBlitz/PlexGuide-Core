@@ -295,9 +295,7 @@
  
     - name: Notify User
       pause:
-        prompt: "\nHama Installed! [PRESS ENTER] to Continue"
-      when:
-        - Hama.stat.exists == False
+        prompt: "\nHama Installed!"
 
     ###################### Plex Sonarr
     - name: Check Sonarr
@@ -311,7 +309,7 @@
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins
         remote_src: yes
 
-    - name: Copy Hama
+    - name: Copy Sonarr
       copy: 
         remote_src=True
         src=/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle-master
@@ -319,9 +317,7 @@
 
     - name: Notify User
       pause:
-        prompt: "\nSonarr Bundle Installed! [PRESS ENTER] to Continue"
-      when:
-        - sonarr.stat.exists == False
+        prompt: "\nSonarr Bundle Installed!"
 
     ###################### Plex Radarr
     - name: Check Radarr Bundle
@@ -343,9 +339,7 @@
 
     - name: Notify User
       pause:
-        prompt: "\nRadarr Installed! [PRESS ENTER] to Continue"
-      when:
-        - radarr.stat.exists == False
+        prompt: "\nRadarr Installed!"
 
     - debug: msg="Final Notes - Remote Plex | IP Address {{ipaddress.stdout}} | Plex Type {{servertype.stdout}} | Token {{claim.stdout}}"
       when: servertype.stdout == "remote"
