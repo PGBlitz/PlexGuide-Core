@@ -290,7 +290,8 @@
 
     - name: Installing Hama
       unarchive:
-        remote_src: https://github.com/ZeroQI/Hama.bundle/archive/master.zip
+        src: https://github.com/ZeroQI/Hama.bundle/archive/master.zip
+        remote_src: true
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle
         keep_newer: no
         owner: '1000'
@@ -321,7 +322,8 @@
 
     - name: Installing Sonarr Bundle
       unarchive:
-        remote_src: https://github.com/piplongrun/Sonarr.bundle/archive/master.zip
+        src: https://github.com/piplongrun/Sonarr.bundle/archive/master.zip
+        remote_src: true
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle
         keep_newer: no
         owner: '1000'
@@ -352,7 +354,8 @@
 
     - name: Installing Radarr
       unarchive:
-        remote_src: https://github.com/piplongrun/Radarr.bundle/archive/master.zip
+        src: https://github.com/piplongrun/Radarr.bundle/archive/master.zip
+        remote_src: true
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle
         keep_newer: no
         owner: '1000'
