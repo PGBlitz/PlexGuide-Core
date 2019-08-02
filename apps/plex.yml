@@ -306,6 +306,74 @@
       when:
         - Hama.stat.exists == False
 
+    ###################### Plex Sonarr
+    - name: Check Sonarr
+      stat:
+        path: '/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle'
+      register: sonarr
+
+    - name: Create Basic Directories
+      file: 'path={{item}} state=directory mode=0775 owner=1000 group=1000'
+      with_items:
+        - '/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle'
+      when:
+        - sonarr.stat.exists == False
+
+    - name: Installing Sonarr
+      unarchive:
+        src: https://github.com/piplongrun/Sonarr.bundle/archive/master.zip
+        dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins
+        keep_newer: no
+        owner: '1000'
+        group: '1000'
+        mode: 0775
+        copy: no
+      when:
+        - sonarr.stat.exists == False
+
+    - name: Notify User
+      pause:
+        prompt: "\nSonarr Bundle Installed! [PRESS ENTER] to Continue"
+      when:
+        - sonarr.stat.exists == False
+
+    ###################### Plex Radarr
+    - name: Check Radarr
+      stat:
+        path: '/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle'
+      register: radarr
+
+    - name: Create Basic Directories
+      file: 'path={{item}} state=directory mode=0775 owner=1000 group=1000'
+      with_items:
+        - '/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle'
+      when:
+        - radarr.stat.exists == False
+
+    - name: Installing Radarr
+      unarchive:
+        src: https://github.com/piplongrun/Radarr.bundle/archive/master.zip
+        dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins
+        keep_newer: no
+        owner: '1000'
+        group: '1000'
+        mode: 0775
+        copy: no
+      when:
+        - radarr.stat.exists == False
+
+    - name: Notify User
+      pause:
+        prompt: "\nRadarr Bundle Installed! [PRESS ENTER] to Continue"
+      when:
+        - radarr.stat.exists == False
+
+    - name: Notify User
+      pause:
+        prompt: "\nRadarr Installed! [PRESS ENTER] to Continue"
+      when:
+        - radarr.stat.exists == False
+
     - debug: msg="Final Notes - Remote Plex | IP Address {{ipaddress.stdout}} | Plex Type {{servertype.stdout}} | Token {{claim.stdout}}"
       when: servertype.stdout == "remote"
 
