@@ -295,7 +295,6 @@
         owner: '1000'
         group: '1000'
         mode: 0775
-        copy: no
 
     - name: Notify User
       pause:
@@ -323,7 +322,6 @@
         owner: '1000'
         group: '1000'
         mode: 0775
-        copy: no
 
     - name: Notify User
       pause:
@@ -351,7 +349,6 @@
         owner: '1000'
         group: '1000'
         mode: 0775
-        copy: no
 
     - name: Notify User
       pause:
