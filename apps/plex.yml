@@ -289,9 +289,9 @@
 
     - name: Copy Hama
       copy: 
-        src: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle-master/
-        remote_src: True
-        dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle
+        remote_src=True
+        src=/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle-master
+        dest=/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle
         owner: '1000'
         group: '1000'
         mode: 0775
@@ -316,9 +316,9 @@
 
     - name: Copy Hama
       copy: 
-        src: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle-master/
-        remote_src: True
-        dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle
+        remote_src=True
+        src=/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle-master
+        dest=/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle
         owner: '1000'
         group: '1000'
         mode: 0775
@@ -343,9 +343,9 @@
 
     - name: Copy Radarr
       copy: 
-        src: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle-master/
-        remote_src: True
-        dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle
+        remote_src=True
+        src=/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle-master
+        dest=/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle
         owner: '1000'
         group: '1000'
         mode: 0775
