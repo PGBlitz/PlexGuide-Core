@@ -281,7 +281,7 @@
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins
         clone: yes
         update: yes
-	
+
     - name: Checkout Git Sonarr Bundle
       git:
         repo: 'https://github.com/piplongrun/Sonarr.bundle.git'
