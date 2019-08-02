@@ -298,7 +298,6 @@
       copy: 
         src: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle-master
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle
-        keep_newer: no
         owner: '1000'
         group: '1000'
         mode: 0775
@@ -333,7 +332,6 @@
       copy: 
         src: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle-master
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle
-        keep_newer: no
         owner: '1000'
         group: '1000'
         mode: 0775
@@ -368,7 +366,6 @@
       copy: 
         src: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle-master
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle
-        keep_newer: no
         owner: '1000'
         group: '1000'
         mode: 0775
