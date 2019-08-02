@@ -292,6 +292,7 @@
       unarchive:
         src: https://github.com/ZeroQI/Hama.bundle/archive/master.zip
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins
+        remote_src: yes
 
     - name: Copy Hama
       copy: 
@@ -326,6 +327,7 @@
       unarchive:
         src: https://github.com/piplongrun/Sonarr.bundle/archive/master.zip
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins
+        remote_src: yes
 
     - name: Copy Hama
       copy: 
@@ -360,6 +362,7 @@
       unarchive:
         src: https://github.com/piplongrun/Radarr.bundle/archive/master.zip
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins
+        remote_src: yes
 
     - name: Copy Radarr
       copy: 
