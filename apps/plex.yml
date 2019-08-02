@@ -291,13 +291,11 @@
     - name: Installing Hama
       unarchive:
         src: https://github.com/ZeroQI/Hama.bundle/archive/master.zip
-        dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle
-      when:
-        - Hama.stat.exists == False
+        dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins
 
     - name: Copy Hama
       copy: 
-        src:/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle-master
+        src: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle-master
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle
         keep_newer: no
         owner: '1000'
@@ -327,14 +325,11 @@
     - name: Installing Sonarr Bundle
       unarchive:
         src: https://github.com/piplongrun/Sonarr.bundle/archive/master.zip
-        dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle
-
-      when:
-        - sonarr.stat.exists == False
+        dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins
 
     - name: Copy Hama
       copy: 
-        src:/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle-master
+        src: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle-master
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle
         keep_newer: no
         owner: '1000'
@@ -364,10 +359,7 @@
     - name: Installing Radarr
       unarchive:
         src: https://github.com/piplongrun/Radarr.bundle/archive/master.zip
-        dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle
-
-      when:
-        - radarr.stat.exists == False
+        dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins
 
     - name: Copy Radarr
       copy: 
