@@ -282,7 +282,7 @@
         version: master
         clone: no
         update: yes
-	
+
     - name: Checkout Git Sonarr Bundle
       git:
         repo: 'https://github.com/piplongrun/Sonarr.bundle.git'
