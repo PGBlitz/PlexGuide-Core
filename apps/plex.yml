@@ -287,8 +287,8 @@
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins
         remote_src: yes
 
-    - name: Copy Hama
-      copy: 
+    - name: moved folder Hama
+      copy:
         remote_src=True
         src=/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle-master
         dest=/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle
@@ -309,8 +309,8 @@
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins
         remote_src: yes
 
-    - name: Copy Sonarr
-      copy: 
+    - name:  moved folder Sonarr
+      copy:
         remote_src=True
         src=/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle-master
         dest=/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle
@@ -331,8 +331,8 @@
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins
         remote_src: yes
 
-    - name: Copy Radarr
-      copy: 
+    - name:  moved folder Radarr
+      copy:
         remote_src=True
         src=/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle-master
         dest=/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle
