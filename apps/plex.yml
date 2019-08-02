@@ -297,7 +297,7 @@
         owner: '1000'
         group: '1000'
         mode: 0775
-        copy: no
+        #copy: no
       when:
         - Hama.stat.exists == False
 
@@ -329,7 +329,7 @@
         owner: '1000'
         group: '1000'
         mode: 0775
-        copy: no
+        #copy: no
       when:
         - sonarr.stat.exists == False
 
@@ -361,7 +361,7 @@
         owner: '1000'
         group: '1000'
         mode: 0775
-        copy: no
+        #copy: no
       when:
         - radarr.stat.exists == False
 
