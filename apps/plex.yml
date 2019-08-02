@@ -281,13 +281,6 @@
         path: '/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle'
       register: Hama
 
-    - name: Create Basic Directories
-      file: 'path={{item}} state=directory mode=0775 owner=1000 group=1000'
-      with_items:
-        - '/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle'
-      when:
-        - Hama.stat.exists == False
-
     - name: Installing Hama
       unarchive:
         src: https://github.com/ZeroQI/Hama.bundle/archive/master.zip
@@ -296,7 +289,8 @@
 
     - name: Copy Hama
       copy: 
-        src: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle-master
+        src: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle-master/
+        remote_src: yes
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle
         owner: '1000'
         group: '1000'
@@ -315,13 +309,6 @@
         path: '/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle'
       register: sonarr
 
-    - name: Create Basic Directories
-      file: 'path={{item}} state=directory mode=0775 owner=1000 group=1000'
-      with_items:
-        - '/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle'
-      when:
-        - sonarr.stat.exists == False
-
     - name: Installing Sonarr Bundle
       unarchive:
         src: https://github.com/piplongrun/Sonarr.bundle/archive/master.zip
@@ -330,7 +317,8 @@
 
     - name: Copy Hama
       copy: 
-        src: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle-master
+        src: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle-master/
+        remote_src: yes
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle
         owner: '1000'
         group: '1000'
@@ -349,13 +337,6 @@
         path: '/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle'
       register: radarr
 
-    - name: Create Basic Directories
-      file: 'path={{item}} state=directory mode=0775 owner=1000 group=1000'
-      with_items:
-        - '/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle'
-      when:
-        - radarr.stat.exists == False
-
     - name: Installing Radarr
       unarchive:
         src: https://github.com/piplongrun/Radarr.bundle/archive/master.zip
@@ -364,7 +345,8 @@
 
     - name: Copy Radarr
       copy: 
-        src: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle-master
+        src: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle-master/
+        remote_src: yes
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle
         owner: '1000'
         group: '1000'
