@@ -291,15 +291,19 @@
     - name: Installing Hama
       unarchive:
         src: https://github.com/ZeroQI/Hama.bundle/archive/master.zip
-        remote_src: true
+        dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle
+      when:
+        - Hama.stat.exists == False
+
+    - name: Copy Hama
+      copy: 
+        src:/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle-master
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle
         keep_newer: no
         owner: '1000'
         group: '1000'
         mode: 0775
-        #copy: no
-      when:
-        - Hama.stat.exists == False
+        copy: no
 
     - name: Notify User
       pause:
@@ -323,15 +327,20 @@
     - name: Installing Sonarr Bundle
       unarchive:
         src: https://github.com/piplongrun/Sonarr.bundle/archive/master.zip
-        remote_src: true
+        dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle
+
+      when:
+        - sonarr.stat.exists == False
+
+    - name: Copy Hama
+      copy: 
+        src:/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle-master
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle
         keep_newer: no
         owner: '1000'
         group: '1000'
         mode: 0775
-        #copy: no
-      when:
-        - sonarr.stat.exists == False
+        copy: no
 
     - name: Notify User
       pause:
@@ -355,21 +364,20 @@
     - name: Installing Radarr
       unarchive:
         src: https://github.com/piplongrun/Radarr.bundle/archive/master.zip
-        remote_src: true
+        dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle
+
+      when:
+        - radarr.stat.exists == False
+
+    - name: Copy Radarr
+      copy: 
+        src: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle-master
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle
         keep_newer: no
         owner: '1000'
         group: '1000'
         mode: 0775
-        #copy: no
-      when:
-        - radarr.stat.exists == False
-
-    - name: Notify User
-      pause:
-        prompt: "\nRadarr Bundle Installed! [PRESS ENTER] to Continue"
-      when:
-        - radarr.stat.exists == False
+        copy: no
 
     - name: Notify User
       pause:
