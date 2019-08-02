@@ -274,23 +274,30 @@
         prompt: "\nWebTools Installed! [PRESS ENTER] to Continue"
       when:
         - webtools.stat.exists == False
+
     - name: Checkout Git Hama Bundle
       git:
         repo: 'https://github.com/ZeroQI/Hama.bundle.git'
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins
         version: master
+        clone: no
+        update: no
 
     - name: Checkout Git Sonarr Bundle
       git:
         repo: 'https://github.com/piplongrun/Sonarr.bundle.git'
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins
         version: master
+        clone: no
+        update: no
 
     - name: Checkout Git Radarr Bundle
       git:
         repo: 'https://github.com/piplongrun/Radarr.bundle.git'
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins
         version: master
+        clone: no
+        update: no
 
     - debug: msg="Final Notes - Remote Plex | IP Address {{ipaddress.stdout}} | Plex Type {{servertype.stdout}} | Token {{claim.stdout}}"
       when: servertype.stdout == "remote"
