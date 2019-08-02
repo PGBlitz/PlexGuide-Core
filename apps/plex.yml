@@ -275,71 +275,29 @@
       when:
         - webtools.stat.exists == False
 
-    ###################### Plex Hama
-    - name: Check Hama Bundle
-      stat:
-        path: '/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle'
-      register: Hama
-
-    - name: Installing Hama
-      unarchive:
-        src: https://github.com/ZeroQI/Hama.bundle/archive/master.zip
+    - name: Checkout Git Hama Bundle
+      git:
+        repo: 'https://github.com/ZeroQI/Hama.bundle.git'
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins
-        remote_src: yes
+        owner: '1000'
+        group: '1000'
+        mode: 0775
 
-    - name: moved folder Hama
-      copy:
-        remote_src=True
-        src=/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle-master
-        dest=/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Hama.bundle
- 
-    - name: Notify User
-      pause:
-        prompt: "\nHama Installed!"
-
-    ###################### Plex Sonarr
-    - name: Check Sonarr
-      stat:
-        path: '/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle'
-      register: sonarr
-
-    - name: Installing Sonarr Bundle
-      unarchive:
-        src: https://github.com/piplongrun/Sonarr.bundle/archive/master.zip
+    - name: Checkout Git Sonarr Bundle
+      git:
+        repo: 'https://github.com/piplongrun/Sonarr.bundle.git'
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins
-        remote_src: yes
+        owner: '1000'
+        group: '1000'
+        mode: 0775
 
-    - name:  moved folder Sonarr
-      copy:
-        remote_src=True
-        src=/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle-master
-        dest=/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Sonarr.bundle
-
-    - name: Notify User
-      pause:
-        prompt: "\nSonarr Bundle Installed!"
-
-    ###################### Plex Radarr
-    - name: Check Radarr Bundle
-      stat:
-        path: '/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle'
-      register: radarr
-
-    - name: Installing Radarr
-      unarchive:
-        src: https://github.com/piplongrun/Radarr.bundle/archive/master.zip
+    - name: Checkout Git Radarr Bundle
+      git:
+        repo: 'https://github.com/piplongrun/Radarr.bundle.git'
         dest: /opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins
-        remote_src: yes
-
-    - name:  moved folder Radarr
-      copy:
-        remote_src=True
-        src=/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle-master
-        dest=/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-ins/Radarr.bundle
-
-    - name: Notify User
-      pause:
-        prompt: "\nRadarr Installed!"
+        owner: '1000'
+        group: '1000'
+        mode: 0775
 
     - debug: msg="Final Notes - Remote Plex | IP Address {{ipaddress.stdout}} | Plex Type {{servertype.stdout}} | Token {{claim.stdout}}"
       when: servertype.stdout == "remote"
