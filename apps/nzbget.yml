@@ -91,6 +91,12 @@
         state: started
         labels: '{{pg_labels}}'
 
+    # SCRIPT FOLDER WITH CORRECT PERMS ##########################################
+    - name: 'Create {{pgrole}} correct script directory'
+      file: 'path={{item}} state=directory mode=0775 owner=1000 group=1000 recurse=yes'
+      with_items:
+        - '/opt/appdata/{{pgrole}}/scripts
+
     # CONFIGURATION #############################################################
     - name: 'Waiting for {{pgrole}} to initialize'
       wait_for:
