@@ -19,7 +19,7 @@
         extport2: '5000'
         intport3: '51413'
         extport3: '51413'
-        image: 'linuxserver/rutorrent'
+        image: 'ghcr.io/linuxserver/rutorrent'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'

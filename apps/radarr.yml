@@ -16,7 +16,7 @@
         pgrole: 'radarr'
         intport: '7878'
         extport: '7878'
-        image: 'linuxserver/radarr:preview'
+        image: 'ghcr.io/linuxserver/radarr:preview'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'

@@ -15,7 +15,7 @@
         pgrole: 'lazylibrarian'
         intport: '5299'
         extport: '5299'
-        image: 'linuxserver/lazylibrarian'
+        image: 'ghcr.io/linuxserver/lazylibrarian'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'

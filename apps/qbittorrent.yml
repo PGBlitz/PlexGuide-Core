@@ -18,7 +18,7 @@
         extport: '8083'
         intport2: '7889'
         extport2: '7889'
-        image: 'linuxserver/qbittorrent'
+        image: 'ghcr.io/linuxserver/qbittorrent'
 
     # CORE (MANDATORY) #############################################################
     - name: 'Including cron job'

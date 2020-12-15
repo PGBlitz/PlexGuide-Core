@@ -15,7 +15,7 @@
         pgrole: 'jackett'
         intport: '9117'
         extport: '9117'
-        image: 'linuxserver/jackett'
+        image: 'ghcr.io/linuxserver/jackett'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'
